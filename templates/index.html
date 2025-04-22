@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber Risk ROI Calculator</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #00ffc3;
+    }
+    .metric {
+      margin-bottom: 1rem;
+    }
+    .highlight {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .box {
+      background: #333;
+      border-radius: 8px;
+      padding: 1rem;
+      flex: 1;
+      min-width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cyber Risk ROI Summary</h1>
+
+  <div class="grid">
+    <div class="box">
+      <h2>ALE Before Controls</h2>
+      <p class="highlight">${{ ale_before }}M</p>
+    </div>
+    <div class="box">
+      <h2>ALE After Controls</h2>
+      <p class="highlight">${{ ale_after }}M</p>
+    </div>
+    <div class="box">
+      <h2>Risk Reduction</h2>
+      <p class="highlight">${{ risk_reduction }}M</p>
+    </div>
+    <div class="box">
+      <h2>ROI</h2>
+      <p class="highlight">{{ roi }}%</p>
+    </div>
+  </div>
+
+  <h2>Cost Breakdown</h2>
+  <ul>
+    <li>Controls Cost: ${{ controls_cost }}M</li>
+    <li>User Credit Monitoring: ${{ user_breach_cost }}M</li>
+    <li>Downtime Cost: ${{ downtime_cost }}M</li>
+    <li>Total Incident Cost: ${{ total_cost }}M</li>
+  </ul>
+
+  <p><em>Program Maturity:</em> {{ maturity_level }}</p>
+</body>
+</html>
 
